@@ -190,7 +190,7 @@ case $SKIP_MISCCONF in
     for i in $(find .config/ -mindepth 1 -maxdepth 1 ! -name 'ags' ! -name 'fish' ! -name 'hypr' -exec basename {} \;); do
 #      i=".config/$i"
       echo "[$0]: Found target: .config/$i"
-      if [ -d ".config/$i" ];then v rsync -av --delete ".config/$i/" "$XDG_CONFIG_HOME/$i/"
+      if [ -d ".config/$i" ];then v rsync -av --delete "config/$i/" "$XDG_CONFIG_HOME/$i/"
       elif [ -f ".config/$i" ];then v rsync -av ".config/$i" "$XDG_CONFIG_HOME/$i"
       fi
     done
